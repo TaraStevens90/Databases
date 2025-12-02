@@ -1,0 +1,86 @@
+/* Custom Variable Colors */
+:root {
+    /* Core palette */
+    --primary-color-evergreen: #11574A;
+    --secondary-color-green: green;
+    --accent-color-border: #8fbf7f;
+
+    /* Text */
+    --text-color-light: #000000;
+    --text-color-dark: #f5f5f5;
+
+    /* Backgrounds */
+    --background-color-light: #ffffff;  /* page background light mode */
+    --background-color-dark: #121212;   /* page background dark mode */
+    --blockquote-bg-light: #ededed; /* lighter gray */ 
+    --blockquote-bg-dark: #1e1e1e;
+   
+     /* Header */
+    --header-top: #ffffff;
+    --header-mid: #b2f2bb;
+    --header-bottom: green;
+
+    /* Navigation */
+    --nav-bg-light: var(--primary-color-evergreen); /* evergreen in light mode */
+    --nav-bg-dark: #0C3E36; 
+
+    /* Footer */
+    --footer-left: var(--secondary-color-green);
+    --footer-right: #8fbf7f;
+    --footer-text: white;
+
+    /* fallback for body */
+    --body-bg: var(--background-color-light);
+    --body-fg: var(--text-color-light);
+}
+
+/* Heading Colors */
+main h1 {
+    color: var(--primary-color-evergreen);
+}
+main h2,main h3 {
+  color: var(--secondary-color-green);
+}
+
+/* Dark mode variables */
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Core palette */
+        --primary-color-evergreen: #0C3E36;
+        --secondary-color-green: #8fe4a0;
+        --accent-color-border: #2a4f43;
+
+        /* Header */
+        --header-top: #17a37e;
+        --header-mid: #1b9e7d;
+        --header-bottom: #0c3e36;
+
+        /* Body */
+        --body-bg: #1b1b1b;
+        --body-fg: #f5f5f5;
+
+        /* Footer */
+        --footer-left: #052c26;
+        --footer-right: #17a37e;
+        --footer-text: #e8f5e9;
+    }
+
+    /* Dark mode page container */
+    .page-container { 
+        background-color: black; /* keep container white */
+        box-shadow:
+            0 0 30px rgba(255, 255, 255, 0.30),
+            0 0 20px rgba(255, 255, 255, 0.20),
+            0 0 10px rgba(255, 255, 255, 0.15),
+            0 0 5px rgba(255, 255, 255, 0.10);
+    }
+    /* Dark mode blockquote */
+    & blockquote { 
+        font-family: 'Lora', serif;
+        background-color: var(--blockquote-bg-dark);
+        color: var(--text-dark); 
+        max-width: 90%;
+        width: auto;               /* let it shrink on small screens */
+        overflow-wrap: break-word; /* prevent text overflow */
+    }
+}

@@ -1,0 +1,596 @@
+/* all elements to follow conventional CSS layout, 12/01/2025, Tara Stevens */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face { /* is used for blockquotes */
+  font-family: 'Lora';
+  src: url('https://fonts.gstatic.com/s/lora/v32/0QI6MX1D_J2hp0o.woff2') format('woff2');
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* container created for the page so I could keep the fancy black margin */
+/* Base container (light mode default) */
+.page-container {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  overflow: hidden; /* clip sides */
+  border: 4px solid var(--accent-color-border);
+  border-radius: 8px;
+  box-shadow: 0 0 30px black, 0 0 20px black, 0 0 10px black, 0 0 5px black;
+  text-align: left;
+}
+
+/* Styles for the body **/
+body {
+  padding: 2em;
+  background-color: var(--body-bg);
+  color: var(--body-fg);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100%;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+h1 { 
+  font-size: 160%;
+}
+
+h2 {
+  padding: 0.5em 0;
+  font-size: 170%;
+  color: var(--primary-color-evergreen);
+}
+
+h3 { 
+  padding: 0.5em 0.7em;
+  }
+
+p {
+  padding: 0em 0 .75em 0;
+  text-indent: 2em;
+}
+
+ul {
+  padding-left: 1em;
+  list-style-type: disc;
+  line-height: 1.6;
+}
+
+/* Header styles */
+header {
+  padding: .5em;
+  border-bottom: 4px solid var(--accent-color-border);
+  background: linear-gradient(to bottom, var(--header-top), var(--header-mid), var(--header-bottom));
+  color: var(--body-fg);
+}
+
+header img {
+  float: left;
+  margin: 0 15px 0 8px;
+}
+
+/* Header typography */
+header h1 {
+  font-size: 260%;
+  font-style: italic;
+  color: var(--primary-color-evergreen);
+}
+
+header h2 {
+  font-size: 168%;
+  padding: 0.1em 0 0.78em;
+}
+
+header h3 {
+  font-size: 130%;
+  padding-top: 0;
+}
+
+/* Style for main */
+main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; /* This stops horizontal overflow */
+  align-items: flex-start;
+  gap: 1em;
+  width: 100%;
+  max-width: 100%;
+  padding: 0.5em 2em; 
+}
+
+/* Main text inside bottom content */
+.main-text {
+  flex: 1 1 100%;
+  min-width: 0; /* prevents overflow of long content */
+}
+
+/* Text flow*/
+.text-content {
+  overflow: hidden; /* ensures text clears float properly */
+}
+.text-column h2 { 
+  text-align: center;
+  font-size: 220%;
+  color: var(--primary-color-evergreen);
+  padding-bottom: 0;
+}
+
+.text-column { /* add a space between paragraphs on index page */
+  display: flex;
+  flex-direction: column;
+  gap: 1em; /* consistent spacing between paragraphs */
+}
+
+/* Content blocks */
+.content-block {
+  display: flex;
+  flex-direction: row; /* side by side on large screens */
+  justify-content: center; /* centers children horizontally */
+  align-items: center;
+  gap: 2em; /* space between text and figure */
+  max-width: 1200px;
+  margin: 0 auto; /* centers the whole section itself */
+  padding: 1em 2em 0.5em;
+  box-sizing: border-box;
+}
+
+.content-block p:first-child {
+  margin-top: 0; /* removes extra space above first paragraph in block */
+}
+
+.content-block p {
+  padding: 0 1em;
+  margin-bottom: 0;
+}
+
+/* Bottom content container */
+.content-with-quote {
+  display: flex;
+  flex-direction: column;
+  gap: 0; /* reduced from 1.5em */
+}
+
+/* Style for Figure */
+figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 100%;
+}
+figure img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+figcaption {
+  padding: 1em .5em;
+  text-align: center;
+  font-weight: bold;
+  color: var(--secondary-color-green);
+  background-color: white;
+}
+
+
+/* Styles for the article */
+article {
+	border-top: 3px solid var(--primary-color);
+	padding-top: .5em;
+	margin-bottom: .5em;
+
+	& figure { /* figure to float left w/ captions above*/
+    float: left;
+		max-width: 500px;
+    margin: 0.25em 1em 1em 0;
+    text-align: center;
+  }
+
+	& img {
+    display: block;
+		width: 100%;
+    height: auto;
+    border: 1px solid var(--dark); 
+  }
+}
+
+/* Default: aside below section, full width */
+.bottom-row {
+  display: flex;
+  flex-direction: column; /* stack by default */
+  gap: 1em;
+}
+
+.bottom-row aside,
+.bottom-row figure {
+  width: 100%; /* full width by default */
+}
+
+.bottom-aside, .bottom-aside2 {
+  display: inline-block; /* shrink-wrap the box to content */
+  text-align: center; /* keep links left-aligned */
+}
+
+.bottom-aside ul, .bottom-aside2 ul {
+  list-style: none; /* removes bullets */
+}
+
+/* Styles for aside */
+aside {
+  padding: 0em 1em 1em 1.5em; /* Note to self: top right bottom left */
+  border: 3px solid var(--primary-color-evergreen);
+  border-radius: 25px;
+  
+  & h2 {
+    color: var(--primary-color-evergreen);
+  }
+
+  & ul {
+    padding-left: 0; /* removed indent */
+    line-height: 1.5; /* veritcal height */
+  }
+
+  & a {
+    &:link, 
+    &:visited { 
+      color: var(--secondary-color-green);
+    }
+    
+    &:hover, 
+    &:focus { 
+      color: maroon;
+    }
+  }
+}
+
+/* Styles for links */
+section a:link,
+section a:visited,
+footer a:link,
+footer a:visited {
+  color: var(--primary-color-evergreen);
+  transition: color 0.3s ease;
+}
+
+section a:hover,
+section a:focus,
+section a:active,
+footer a:hover,
+footer a:focus,
+footer a:active {
+  color: maroon;
+}
+
+/* Styles for blockquote */
+blockquote {
+  box-sizing: border-box;
+  max-width: 90%;
+  width: 40em;
+  margin: 1.5em auto;
+  padding: 1em;
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-weight: bold;
+  line-height: 1.5;
+  text-align: center;
+  background-color: var(--blockquote-bg-light);
+  border-radius: 8px;
+}
+
+/* Prevent text overflow in flex items */
+.main-text,
+.text-column,
+.content-block,
+.content-with-quote {
+  min-width: 0; /* allows flex shrink */
+  overflow-wrap: break-word; /* breaks up long words or sentences*/
+  word-break: break-word;
+}
+
+/* Style for section */
+section {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; /* prevents edge leak */
+  box-sizing: border-box;
+}
+
+/* styles for the nav bar */
+.navbar-container{ /* nav bar, container, the colored bar that houses the menu items */
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  background-color: var(--primary-color-evergreen);
+  position: relative;
+  z-index: 10000; /* higher than video so mouse click wont press play */
+}
+
+/* Main navbar layout */
+.navbar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5em;
+  background-color: var(--primary-color-evergreen);
+  position: relative;
+  z-index: 10000; /* higher than video so mouse click wont press play */
+}
+.navbar a {
+  display: block;
+  padding: 0em 1em;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  border: 2px solid transparent; /* reserve space for hoover transitions */
+  transition: border var(--accent-color-border) 0.3s ease,/* had to add this as I had some choppy behavior on hoover*/
+}
+
+.navbar a:hover,
+.navbar a:focus {
+  font-weight: bold;
+  border: 2px solid var(--accent-color-border); /* This is the border that goes around the menu items*/
+}
+
+/* styles for the menu icons */
+.menu {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 0;
+}
+
+.menu a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5em;
+  padding: 0.5em 0.75em;
+  line-height: 1.5;
+}
+
+/* style for the hamburger toggle button */
+.menu-btn {/* hidden menu by default */
+ 	display: none;
+  cursor: pointer;
+}
+
+/* Hamburger menu icon */
+.menu-btn::before {
+  content: "\2630"; /* Unicode hamburger icon */
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1.5em;
+  padding: 0.5em;
+}
+
+.menu-checkbox:checked + .menu-btn::before { /* 'close icon' is also displayed */
+  content: "\2715"; /* Unicode close icon */
+}
+
+/* Styles for footer */
+footer {
+  padding: 1em 0 0.5em 0;
+  background: linear-gradient(to left, var(--footer-left), var(--footer-right));
+  color: var(--footer-text);
+  font-size: smaller;
+  text-align: center;
+}
+
+
+/*Media query for small screens */
+@media only screen and (max-width: 855px) {
+  /*resets padding on small screens for nav bar container/navbar */
+  .navbar-container, 
+  .navbar {
+    padding: 0;
+  }
+
+  /*styles for hamburger on small screens */
+  .menu-btn { 
+    display: block;
+    width: 100vw;
+    font-size: 1em;
+    font-weight: bold;
+    background-color: var(--primary-color-evergreen);
+    color: white;
+    cursor: pointer;
+  }
+
+  .menu-btn:hover {
+    color: var(--accent-color-border);
+  }
+
+  /* Style for menu on small screens */
+  .menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    flex-direction: column;
+    width: auto;
+    background-color: var(--primary-color-evergreen);
+    padding: 0 0 0.25em 0.75em;
+    gap: 0;
+  }
+  
+  .menu-checkbox:checked + .menu-btn + .menu {
+    display: flex;
+  }
+
+  .menu li {
+    width: 100%;
+  }
+
+  .menu li > a {
+    display: block;
+    text-align: left;
+    padding: 0 0.5em;
+  }
+
+  aside {
+    width: 100%; /* full width below navbar */
+    margin-top: 0;
+  }
+
+.content-block {
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    padding: 1em;
+  }
+
+  figure img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  article h1 {
+   text-align: left;   /* centers the text horizontally */
+  }
+
+.heading-NoSQL h1{
+  text-align: center;
+  padding-bottom: .5em;
+  }
+}
+
+/* the media query for large screens */
+@media only screen and (min-width: 856px) {
+  header {
+    text-align: left;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  aside {
+    order: 2;
+    flex-basis: 100%;
+    align-self: stretch;
+  }
+
+  section {
+  width: 100%;
+}
+
+  .menu-btn {
+    display: none;
+  }
+ 
+  .navbar {
+    padding: 0em 2em;
+  }
+
+  .navbar a {
+    padding: 0em 1em;
+  }
+
+ .content-block {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;     /* smaller horizontal gap */
+    padding: 1em 3em; /* reduced vertical padding */
+  }
+
+  .text-column {
+    flex: 2;
+  }
+
+  figure {
+    flex: 1;
+    max-width: 400px;
+  }
+
+  figure img {
+    max-width: 100%;
+  }
+
+  .content-with-quote {
+    flex-direction: row; /* side by side */
+    align-items: center; /* vertical alignment */
+    gap: 2em; /*spacing between text and quote */
+  }
+
+  .main-text {
+    flex: 2; /* ~2/3 width for paragraphs */
+    min-width: 0; /* prevents weird wrapping */
+  }
+
+  blockquote {
+    flex: 1; /* ~1/3 width for blockquote */
+    max-width: 33%; /* set a limit of ~1/3 to be safe */
+    padding: 1em;
+    margin-left: auto;/* push to the right */
+  }
+
+  /* Wrapper centers content below main */
+  .bottom-row {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    align-items: center; /* vertical centering */
+    justify-content: center;/* horizontal centering */
+    flex-wrap: nowrap;/* prevents stacking */
+    margin: 0em auto 0 auto;/* center under main content */
+  }
+
+  .bottom-row2 {
+    display: flex;
+    justify-content: center; /* horizontal centering */
+    align-items: center; /* align items at top of row */
+    gap: 1em;
+    margin: 2em auto 0; /* spacing above + center horizontally */
+  }
+
+  .bottom-aside {
+    display: inline-block; /* shrink-wrap the box to content */
+    vertical-align: top; 
+    width: auto;   
+    max-width: none; /* prevent stretching */
+    text-align: center;
+    padding: 0.5em 0;
+  }
+
+  .bottom-row2 blockquote {
+    flex: 1; /* blockquote grows to fill available space */
+    margin: 0;
+  }
+
+  .bottom-aside2 {
+    max-width: 30%;
+    display: inline-block;
+    text-align: center;
+  }
+
+  article h1 {
+    margin: 1em 1em .5em .5em;
+    font-size: 165%;
+    text-align: left;
+  }
+
+.heading-NoSQL h1 {
+   margin: 0.5em 0;
+   padding: 0;
+   font-size: 200%;
+   text-align: center;
+  }
+}

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Databases</title>
+	<link rel="icon" href="images/favicon.ico">
+	<link rel="stylesheet" href="../styles/style.css">
+	<link rel="stylesheet" href="../styles/table.css">
+	<link rel="stylesheet" href="../styles/Color_Theme.css">
+</head>
+<body>
+  <div class="page-container">
+    <header>
+      <img src="../images/Database GIF.gif" alt="Database Logo" width="105">
+      <h1>Databases</h1>
+      <h2>Turning Raw Data into Real Decisions</h2>
+    </header>
+
+	<nav class="navbar">
+	<input type="checkbox" id="menu-toggle" class="menu-checkbox" hidden>
+  	<label for="menu-toggle" class="menu-btn"></label>
+		<ul class="menu">
+			<li><a href="../index.html" class="current">Home</a></li>
+			<li><a href="../Table_Video/Video.html">Video</a></li>
+  			<li><a href="../SQL/SQL.html">SQL</a></li>
+  			<li><a href="../NoSQL/NoSQL.html">NoSQL</a></li>
+			<li><a href="../Table_Video/Summary.html">Summary</a></li>	
+		</ul>
+	</nav>
+
+	<main>
+		<div class="comparison-wrapper">
+    		<h2>SQL vs. NoSQL Databases Summary</h2>
+			<section class="comparison-section">
+			<table class="comparison-table">
+  				<caption>SQL Advantages and Disadvantages</caption>
+  				<thead>
+    				<tr>
+      					<th>Advantages</th>
+      					<th>Description</th>
+    				</tr>
+  				</thead>
+
+  				<tbody>
+    			<!-- NoSQL Advantages -->
+					<tr>
+                    	<td class="advantages">Structured & Organized</td>
+                    	<td><div class="description">Predefined schemas and tables ensure data is stored consistently in a logical format</div></td>
+                	</tr>
+				    <tr>
+                    	<td class="advantages">Standardized Language</td>
+                    	<td><div class="description">SQL is a universal query language supported by most relational databases</div></td>
+                	</tr>
+                	<tr>
+                    	<td class="advantages">Data Integrity & Reliability</td>
+                    	<td><div class="description">Enforces ACID properties (Atomicity, Consistency, Isolation, Durability)</div></td>
+                	</tr>
+                	<tr>
+                    	<td class="advantages">Powerful Querying</td>
+                    	<td><div class="description">Optimized for complex queries, joins, aggregations, and reporting</div></td>
+                	</tr>
+                	<tr>
+                    	<td class="advantages">Vertical Scalability</td>
+                    	<td><div class="description">Can handle large amounts of data efficiently on powerful hardware</div></td>
+                	</tr>
+					<tr>
+                    	<td class="advantages">Transactional Support</td>
+                    	<td><div class="description">Strong support for multi-step transactions with strict integrity</div></td>
+                	</tr>
+					<tr>
+                    	<td class="advantages">Mature Ecosystem</td>
+                    	<td><div class="description">Decades of adoption mean robust tooling, documentation, and community support</div></td>
+                	</tr>
+					<tr>
+                    	<td class="advantages">Compatibility with BI Tools</td>
+                    	<td><div class="description">Works seamlessly with business intelligence and analytics tools</div></td>
+                	</tr>
+                	<tr class="last-in-group">
+                    	<td class="advantages">Portability</td>
+                    	<td><div class="description">Can run on different operating systems and platforms with minimal changes</div></td>
+                	</tr>
+                
+				<!-- NoSQL Disadvantages -->
+					<tr>
+      					<td colspan="1" class="section-heading">Disadvantages</td>
+						<td colspan="1" class="section-heading">Description</td>
+    				</tr>
+					<tr>
+                    	<td class="advantages">Rigid Schema</td>
+                    	<td><div class="description">Requires predefined structure; altering tables is complex and time-consuming</div></td>
+                	</tr>
+					<tr>
+                    	<td class="advantages">Complex Setup</td>
+                    	<td><div class="description">Large relational databases require significant tuning and optimization</div></td>
+                	</tr>
+                	<tr>
+                    	<td class="advantages">Performance Bottlenecks</td>
+                    	<td><div class="description">Complex joins can slow performance with massive datasets</div></td>
+                	</tr>
+					<tr>
+                    	<td class="advantages">Scaling Limitations</td>
+                    	<td><div class="description">Typically scales vertically, which is less flexible and costlier than horizontal scaling</div></td>
+                	</tr>
+                	<tr>
+                    	<td class="advantages">Resource Intensive</td>
+                    	<td><div class="description">Heavy queries demand more CPU, memory, and storage</div></td>
+                	</tr>
+                	<tr>
+                    	<td class="advantages">High Cost of Licensing</td>
+                    	<td><div class="description">Enterprise SQL solutions can be expensive compared to open-source options</div></td>
+                	</tr>
+                	<tr class="last-in-group">
+                    	<td class="advantages">Limited Handling of Unstructured Data</td>
+                    	<td><div class="description">Not ideal for JSON, XML, or multimedia formats</div></td>
+                	</tr>
+				</tbody>
+			</table>
+			</section>
+
+			<section class="comparison-section">
+			<table class="comparison-table">
+  				<caption>NoSQL Advantages and Disadvantages</caption>
+  				<thead>
+    				<tr>
+      					<th>Advantages</th>
+      					<th>Description</th>
+    				</tr>
+  				</thead>
+
+  				<tbody>
+    			<!-- NoSQL Advantages -->
+    				<tr>
+      					<td class="advantages">Flexible</td>
+      					<td><div class="description">No predefined schema</div></td>
+    				</tr>
+    				<tr>
+      					<td class="advantages">No Formal Language</td>
+      					<td><div class="description">Data can be stored and manipulated without SQL</div></td>
+    				</tr>
+					<tr>
+      					<td class="advantages">Optimized Performance</td>
+      					<td><div class="description">No complex joins, faster response times</div></td>
+    				</tr>
+					<tr>
+      					<td class="advantages">Purpose-built</td>
+      					<td><div class="description">Supports formats like JSON documents without rigid tables</div></td>
+    				</tr>
+					<tr>
+      					<td class="advantages">Distributed</td>
+      					<td><div class="description">Easily scaled horizontally across servers for high availability</div></td>
+    				</tr>
+					<tr>
+      					<td class="advantages">In-memory or Serverless</td>
+      					<td><div class="description">Reduces need for over-provisioning</div></td>
+    				</tr>
+					<tr>
+      					<td class="advantages">Ease of Setup</td>
+      					<td><div class="description">No upfront creation of complex relationships between tables</div></td>
+    				</tr>
+    				<tr>
+      					<td class="advantages">Lower Resource Demands</td>
+      					<td><div class="description">Requires less computing power and memory</div></td>
+    				</tr>
+    				<tr class="last-in-group">
+      					<td class="advantages">Cost-effective</td>
+      					<td><div class="description">Pay-as-you-go model suits fluctuating workloads</div></td>
+    				</tr>
+
+    			<!-- NoSQL Disadvantages -->
+					<tr>
+      					<td colspan="1" class="section-heading">Disadvantages</td>
+						<td colspan="1" class="section-heading">Description</td>
+    				</tr>
+					<tr>
+      					<td class="advantages">No Structured Schema</td>
+      					<td><div class="description">No native joins; complex relationships require workarounds</div></td>
+    				</tr>
+					<tr>
+      					<td class="advantages">Limited Standardization</td>
+      					<td><div class="description">No universal query language; each system has unique syntax</div></td>
+    				</tr>
+    				<tr>
+      					<td class="advantages">Data Validation Challenges</td>
+      					<td><div class="description">Schema-less design can lead to inconsistent formats</div></td>
+    				</tr>
+    				<tr>
+      					<td class="advantages">Weaker Consistency</td>
+      					<td><div class="description">Trades ACID compliance for eventual consistency</div></td>
+    				</tr>
+    				<tr>
+      					<td class="advantages">Operational Overhead</td>
+      					<td><div class="description">Distributed systems add complexity in setup and maintenance</div></td>
+    				</tr>
+    				<tr>
+      					<td class="advantages">Migration Difficulty</td>
+      					<td><div class="description">Moving from SQL to NoSQL is challenging</div></td>
+					</tr>
+    				<tr class="last-in-group">
+      					<td class="advantages">Limited Transactional Integrity</td>
+      					<td><div class="description">Not ideal for strict transactional systems like banking</div></td>
+    				</tr>
+    			
+  				</tbody>
+			</table>
+			</section>
+		</div>
+	</main>
+	<footer>
+		<p>By: Tara Stevens</p>
+		<p>Student of <a href="https://www.pierce.ctc.edu" target="_blank" rel="noopener noreferrer"><u>Pierce College</u></a> 2025</p>
+	</footer>
+  </div>
+
+<!-- Added some JS so my rows would be equal height and line up side-by-side -->
+<script>
+  const sqlRows = document.querySelectorAll('.comparison-section:first-of-type tr');
+  const nosqlRows = document.querySelectorAll('.comparison-section:last-of-type tr');
+
+  sqlRows.forEach((row, i) => {
+    if (nosqlRows[i]) {
+      const sqlHeight = row.offsetHeight;
+      const nosqlHeight = nosqlRows[i].offsetHeight;
+      const maxHeight = Math.max(sqlHeight, nosqlHeight);
+      row.style.height = maxHeight + 'px';
+      nosqlRows[i].style.height = maxHeight + 'px';
+    }
+  });
+</script>
+</body>
+</html>
