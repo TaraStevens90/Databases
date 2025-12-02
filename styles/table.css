@@ -1,0 +1,91 @@
+/*  Created table.css on 11/25/2025, Tara Stevens */
+/* Styles for Table */
+
+/* Base table styling */
+table {
+  width: 100%; /* Fill container */
+  margin: 0 0 1em 0; /* Bottom spacing */
+  border: 2px solid black; /* Outer border */
+  border-collapse: collapse; /* Remove cell spacing */
+}
+
+/* Heading */
+table.h1 {
+  text-align: center;
+  padding: 0; /* remove extra padding */
+  margin-bottom: 0;
+  color: var(--primary-color-evergreen);
+}
+
+/* Table caption */
+caption {
+  caption-side: top;
+  margin-bottom: 0.25em; /* Space below caption and heading */
+  padding: 0; /* Remove default padding */
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  color: green;
+}
+
+/* Top header row background inside table */
+thead tr {
+	background-color: var(--primary-color-evergreen); /* the entire merged header row is evergreen*/
+  color: white; /* text color */
+}
+
+/* Section headings inside table */
+table.comparison-table tbody tr td.section-heading {
+  background-color: var(--primary-color-evergreen) !important;
+  color: white;
+  font-weight: bold;
+}
+
+/* General cell styling */
+th, td {
+  padding: 0.2em 0.4em;
+  text-align: left;
+  vertical-align: middle; /* Vertically center content */
+  border-bottom: 1px solid black; /* Adds grid lines */
+}
+
+/* Cell widths and styling */
+  td.advantages {
+  width: 30%;  
+  font-weight: bold;
+}
+
+td.description {
+  width: 70%;
+  line-height: 1.4;
+}
+
+/* Zebra striping */
+table.comparison-table tbody tr:nth-of-type(even) td { /* Apply striping to cells, not just the row */
+  background-color: white;
+}
+
+table.comparison-table tbody tr:nth-of-type(odd) td {
+  background-color: var(--blockquote-bg-light);
+}
+
+/* Comparison wrapper layout */
+.comparison-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two equal columns */
+  gap: 1rem;
+}
+
+.comparison-wrapper h2 {
+  grid-column: 1 / -1;
+  font-size: 2.2em;
+  text-align: center;
+  color: var(--primary-color-evergreen)
+}
+
+/* Different page break than main */
+@media only screen and (max-width: 1106px) {
+  .comparison-wrapper {
+      display: block; /* Stack tables vertically */
+  }
+}
